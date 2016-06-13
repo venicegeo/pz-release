@@ -1,0 +1,16 @@
+pz-access
+pz-dispatcher
+pz-docs
+pz-gateway
+pz-hello
+pz-ingest
+pz-jobmanager
+pz-logger
+pz-sak
+pz-search-metadata-ingest
+pz-search-query
+pz-security
+pz-servicecontroller
+pz-swagger
+pz-uuidgen
+pz-workflow
