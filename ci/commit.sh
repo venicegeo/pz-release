@@ -4,6 +4,6 @@ pushd `dirname $0` > /dev/null
 root=$(pwd -P)
 popd > /dev/null
 
-git add $root/*
-git commit -m "Automated Release - $date [$tag]"
+git -C $root add \*
+git -C $root commit -m "Automated Release - $date [$tag]"
 [ -z "$tag" ] || $base/lib/tag.sh
