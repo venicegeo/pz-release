@@ -17,8 +17,9 @@ commit=true
 
 outfile=$root/public/$APP.$EXT
 [ -z "$tag" ] && version=$(git describe --long --tags --always) || version=$tag
-branch=$(git describe --contains --all HEAD)
 
+branch=$(git symbolic-ref HEAD)
+branch=${branch##refs/heads/}
 echo $branch | grep -q rc && rc="-rc"
 
 out="{\"version\": \"${version}${rc}\",\"components\":{"
