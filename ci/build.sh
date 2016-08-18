@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 
 pushd `dirname $0` > /dev/null
 root=$(pwd -P)/..
@@ -40,3 +40,5 @@ $commit || exit 0
 git -C $root add \*
 git -C $root commit -m "Automated Release - $date [$tag]"
 [ -n "$tag" ] && git tag -am "Version $tag" ${tag}
+git push origin $branch
+git push origin $branch --tags
