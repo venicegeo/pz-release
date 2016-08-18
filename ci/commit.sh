@@ -6,4 +6,4 @@ popd > /dev/null
 
 git -C $root add \*
 git -C $root commit -m "Automated Release - $date [$tag]"
-[ -z "$tag" ] || $base/lib/tag.sh
+[ -z "$tag" ] || git tag -am "Version $tag" ${tag}
