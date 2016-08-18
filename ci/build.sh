@@ -7,7 +7,7 @@ popd > /dev/null
 source $base/vars.sh
 
 outfile=$base/../public/$APP.$EXT
-version=$(git describe --long --tags --always)
+[ -z "$tag" ] && version=$(git describe --long --tags --always) || version=$tag
 branch=$(git describe --contains --all HEAD)
 
 echo $branch | grep -q rc && rc="-rc"
