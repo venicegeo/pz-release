@@ -7,7 +7,7 @@ popd > /dev/null
 source $root/ci/vars.sh
 
 if [[ -n "$component_revision" && -n "$component" ]]; then
-  git="git -C $root/src/$component_revision"
+  git="cd $root/src/$component_revision && git"
 
   $git checkout master
   $git pull origin master
@@ -25,7 +25,7 @@ out="{\"version\": \"${version}${rc}\",\"components\":{"
 
 sep=
 for app in `cat $root/config/repos.txt` ; do
-  git="git -C $root/src/$app"
+  git="cd $root/src/$app && git $root/src/$app"
   version=$($git describe --long --tags --always)
   out="${out}${sep}\"$app\":\"$version\""
   sep=","
@@ -35,8 +35,9 @@ out="${out}}}"
 
 echo $out > $outfile
 
-git -C $root add \*
-git -C $root commit -m "Automated Release - $date [$tag]"
+cd $root
+git add \*
+git commit -m "Automated Release - $date [$tag]"
 [ -n "$tag" ] && git tag -am "Version ${tag}${rc}" ${tag}${rc}
-git -C $root push origin $branch
-git -C $root push origin $branch --tags
+git push origin $branch
+git push origin $branch --tags
