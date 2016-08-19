@@ -6,14 +6,13 @@ popd > /dev/null
 
 source $root/ci/vars.sh
 
-commit=true
-[ -z "$PCF_SPACE" ] && commit=false && PCF_SPACE=stage
+if [[ -n "$component_revision" && -n "$component" ]]; then
+  git="git -C $root/src/$component_revision"
 
-[ "$PCF_SPACE" != stage ] && [ "$PCF_SPACE" != prod ] && { echo "noop for $PCF_SPACE"; exit; }
-
-
-[ "$PCF_SPACE" = stage ] && git checkout rc
-[ "$PCF_SPACE" = prod ] && git checkout master
+  $git checkout master
+  $git pull origin master
+  $git reset --hard $component_revision
+fi
 
 outfile=$root/public/$APP.$EXT
 [ -z "$tag" ] && version=$(git describe --long --tags --always) || version=$tag
@@ -36,10 +35,8 @@ out="${out}}}"
 
 echo $out > $outfile
 
-$commit || exit 0
-
 git -C $root add \*
 git -C $root commit -m "Automated Release - $date [$tag]"
-[ -n "$tag" ] && git tag -am "Version $tag" ${tag}
+[ -n "$tag" ] && git tag -am "Version ${tag}${rc}" ${tag}${rc}
 git -C $root push origin $branch
 git -C $root push origin $branch --tags
