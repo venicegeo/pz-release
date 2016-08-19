@@ -18,6 +18,8 @@ outfile=$root/public/$APP.$EXT
 [ -z "$tag" ] && version=$(git describe --long --tags --always) || version=$tag
 
 branch=$(git symbolic-ref HEAD)
+[ -z $branch ] && sym=$(git describe --contains --all HEAD)
+[ -z $branch ] && sym=$(git rev-parse --short HEAD)
 branch=${branch##refs/heads/}
 echo $branch | grep -q rc && rc="-rc"
 
