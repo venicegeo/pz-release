@@ -18,8 +18,7 @@ outfile=$root/public/$APP.$EXT
 [ -z "$tag" ] && version=$(git describe --long --tags --always) || version=$tag
 
 branch=$(git symbolic-ref HEAD)
-[ -z $branch ] && sym=$(git describe --contains --all HEAD)
-[ -z $branch ] && sym=$(git rev-parse --short HEAD)
+[ -z $branch ] && branch=$(git describe --contains --all HEAD)
 branch=${branch##refs/heads/}
 echo $branch | grep -q rc && rc="-rc"
 
@@ -38,6 +37,11 @@ out="${out}}}"
 echo $out > $outfile
 
 cd $root
+
+git config user.name "Jenkins"
+git config user.email ""
+git config --global push.default simple
+
 git add \*
 git commit -m "Automated Release - $date [$tag]"
 [ -n "$tag" ] && git tag -am "Version ${tag}${rc}" ${tag}${rc}
