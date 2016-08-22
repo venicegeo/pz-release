@@ -1,0 +1,6 @@
+src/
+ci/
+config/
+*.txt
+*.md
+*.properties

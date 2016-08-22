@@ -1,0 +1,96 @@
+[submodule "src/pz-access"]
+	path = src/pz-access
+	url = https://github.com/venicegeo/pz-access
+[submodule "src/pz-docs"]
+	path = src/pz-docs
+	url = https://github.com/venicegeo/pz-docs
+[submodule "src/pz-ingest"]
+	path = src/pz-ingest
+	url = https://github.com/venicegeo/pz-ingest
+[submodule "src/pz-jobmanager"]
+	path = src/pz-jobmanager
+	url = https://github.com/venicegeo/pz-jobmanager
+[submodule "src/pz-logger"]
+	path = src/pz-logger
+	url = https://github.com/venicegeo/pz-logger
+[submodule "src/pz-sak"]
+	path = src/pz-sak
+	url = https://github.com/venicegeo/pz-sak
+[submodule "src/pz-search-metadata-ingest"]
+	path = src/pz-search-metadata-ingest
+	url = https://github.com/venicegeo/pz-search-metadata-ingest
+[submodule "src/pz-search-query"]
+	path = src/pz-search-query
+	url = https://github.com/venicegeo/pz-search-query
+[submodule "src/pz-security"]
+	path = src/pz-security
+	url = https://github.com/venicegeo/pz-security
+[submodule "src/pz-servicecontroller"]
+	path = src/pz-servicecontroller
+	url = https://github.com/venicegeo/pz-servicecontroller
+[submodule "src/pz-swagger"]
+	path = src/pz-swagger
+	url = https://github.com/venicegeo/pz-swagger
+[submodule "src/pz-uuidgen"]
+	path = src/pz-uuidgen
+	url = https://github.com/venicegeo/pz-uuidgen
+[submodule "src/pz-workflow"]
+	path = src/pz-workflow
+	url = https://github.com/venicegeo/pz-workflow
+[submodule "src/pzsvc-hello"]
+	path = src/pzsvc-hello
+	url = https://github.com/venicegeo/pzsvc-hello
+[submodule "src/pzsvc-preview-generator"]
+	path = src/pzsvc-preview-generator
+	url = https://github.com/venicegeo/pzsvc-preview-generator
+[submodule "src/pz-gateway"]
+	path = src/pz-gateway
+	url = https://github.com/venicegeo/pz-gateway
+[submodule "/Users/seth/repos/rb/pz-release/src/pz-access"]
+	path = /Users/seth/repos/rb/pz-release/src/pz-access
+	url = https://github.com/venicegeo/pz-access
+[submodule "/Users/seth/repos/rb/pz-release/src/pz-docs"]
+	path = /Users/seth/repos/rb/pz-release/src/pz-docs
+	url = https://github.com/venicegeo/pz-docs
+[submodule "/Users/seth/repos/rb/pz-release/src/pz-gateway"]
+	path = /Users/seth/repos/rb/pz-release/src/pz-gateway
+	url = https://github.com/venicegeo/pz-gateway
+[submodule "/Users/seth/repos/rb/pz-release/src/pz-ingest"]
+	path = /Users/seth/repos/rb/pz-release/src/pz-ingest
+	url = https://github.com/venicegeo/pz-ingest
+[submodule "/Users/seth/repos/rb/pz-release/src/pz-jobmanager"]
+	path = /Users/seth/repos/rb/pz-release/src/pz-jobmanager
+	url = https://github.com/venicegeo/pz-jobmanager
+[submodule "/Users/seth/repos/rb/pz-release/src/pz-logger"]
+	path = /Users/seth/repos/rb/pz-release/src/pz-logger
+	url = https://github.com/venicegeo/pz-logger
+[submodule "/Users/seth/repos/rb/pz-release/src/pz-sak"]
+	path = /Users/seth/repos/rb/pz-release/src/pz-sak
+	url = https://github.com/venicegeo/pz-sak
+[submodule "/Users/seth/repos/rb/pz-release/src/pz-search-metadata-ingest"]
+	path = /Users/seth/repos/rb/pz-release/src/pz-search-metadata-ingest
+	url = https://github.com/venicegeo/pz-search-metadata-ingest
+[submodule "/Users/seth/repos/rb/pz-release/src/pz-search-query"]
+	path = /Users/seth/repos/rb/pz-release/src/pz-search-query
+	url = https://github.com/venicegeo/pz-search-query
+[submodule "/Users/seth/repos/rb/pz-release/src/pz-security"]
+	path = /Users/seth/repos/rb/pz-release/src/pz-security
+	url = https://github.com/venicegeo/pz-security
+[submodule "/Users/seth/repos/rb/pz-release/src/pz-servicecontroller"]
+	path = /Users/seth/repos/rb/pz-release/src/pz-servicecontroller
+	url = https://github.com/venicegeo/pz-servicecontroller
+[submodule "/Users/seth/repos/rb/pz-release/src/pz-swagger"]
+	path = /Users/seth/repos/rb/pz-release/src/pz-swagger
+	url = https://github.com/venicegeo/pz-swagger
+[submodule "/Users/seth/repos/rb/pz-release/src/pz-uuidgen"]
+	path = /Users/seth/repos/rb/pz-release/src/pz-uuidgen
+	url = https://github.com/venicegeo/pz-uuidgen
+[submodule "/Users/seth/repos/rb/pz-release/src/pz-workflow"]
+	path = /Users/seth/repos/rb/pz-release/src/pz-workflow
+	url = https://github.com/venicegeo/pz-workflow
+[submodule "/Users/seth/repos/rb/pz-release/src/pzsvc-hello"]
+	path = /Users/seth/repos/rb/pz-release/src/pzsvc-hello
+	url = https://github.com/venicegeo/pzsvc-hello
+[submodule "/Users/seth/repos/rb/pz-release/src/pzsvc-preview-generator"]
+	path = /Users/seth/repos/rb/pz-release/src/pzsvc-preview-generator
+	url = https://github.com/venicegeo/pzsvc-preview-generator

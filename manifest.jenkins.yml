@@ -1,0 +1,9 @@
+applications:
+- name: pz-release
+  host: pz-release
+  buildpack: staticfile_buildpack
+  domain: dev.geointservices.io
+  memory: 128M
+  disk_quota: 128M
+  instances: 1
+  timeout: 180
