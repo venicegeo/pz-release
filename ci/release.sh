@@ -53,9 +53,5 @@ git -C $root add \*
 git -C $root commit -m "Automated Release - $date [$tag]"
 [ -n "$tag" ] && git tag -am "Version ${tag}${id}" ${tag}${id}
 
-while ! git -C $root push origin $branch; do
-  sleep 5
-  git -C $root pull origin $branch
-done
-
+git -C $root push origin $branch
 git -C $root push origin $branch --tags
