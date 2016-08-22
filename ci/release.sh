@@ -18,6 +18,9 @@ git -C $root checkout $branch
 git pull origin $branch
 git submodule update --init
 
+git config user.name VeniceCI
+git config user.email ci@venicegeo.io
+
 
 # Update the component
 if [[ -n "$component_revision" && -n "$component" ]]; then
