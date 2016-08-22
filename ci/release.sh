@@ -6,8 +6,10 @@ popd > /dev/null
 
 source $root/ci/vars.sh
 
+git submodule update --init
+
 if [[ -n "$component_revision" && -n "$component" ]]; then
-  git="cd $root/src/$component_revision && git"
+  git="git -C $root/src/$component_revision"
 
   $git checkout master
   $git pull origin master
@@ -17,16 +19,20 @@ fi
 outfile=$root/public/$APP.$EXT
 [ -z "$tag" ] && version=$(git describe --long --tags --always) || version=$tag
 
-branch=$(git symbolic-ref HEAD)
-[ -z $branch ] && branch=$(git describe --contains --all HEAD)
-branch=${branch##refs/heads/}
-echo $branch | grep -q rc && rc="-rc"
+full_branch=$(git symbolic-ref HEAD)
+[ -z $full_branch ] && full_branch=$(git describe --contains --all HEAD)
+branch=${full_branch##refs/heads/}
+echo $branch | grep -q remotes && branch=${full_branch##remotes/origin/}
+echo $branch | grep -q id && id="-rc"
+echo $branch | grep -q ci && id="-ci"
 
-out="{\"version\": \"${version}${rc}\",\"components\":{"
+git -C $root checkout $branch
+
+out="{\"version\": \"${version}${id}\",\"components\":{"
 
 sep=
 for app in `cat $root/config/repos.txt` ; do
-  git="cd $root/src/$app && git $root/src/$app"
+  git="git -C $root/src/$app"
   version=$($git describe --long --tags --always)
   out="${out}${sep}\"$app\":\"$version\""
   sep=","
@@ -36,14 +42,8 @@ out="${out}}}"
 
 echo $out > $outfile
 
-cd $root
-
-git config user.name "Jenkins"
-git config user.email ""
-git config --global push.default simple
-
-git add \*
-git commit -m "Automated Release - $date [$tag]"
-[ -n "$tag" ] && git tag -am "Version ${tag}${rc}" ${tag}${rc}
-git push origin $branch
-git push origin $branch --tags
+git -C $root add \*
+git -C $root commit -m "Automated Release - $date [$tag]"
+[ -n "$tag" ] && git tag -am "Version ${tag}${id}" ${tag}${id}
+git -C $root push origin $branch
+git -C $root push origin $branch --tags
