@@ -33,6 +33,8 @@ fi
 
 
 # Build release manifest
+[ -z "$tag" ] && version=$(git describe --long --tags --always) || version=$tag
+
 out="{\"version\": \"${version}${id}\",\"components\":{"
 
 sep=
@@ -50,8 +52,6 @@ echo $out > $outfile
 
 
 # Commit and Push
-[ -z "$tag" ] && version=$(git describe --long --tags --always) || version=$tag
-
 git -C $root add \*
 git -C $root commit -m "Automated Release - $date [$version]"
 [ -n "$tag" ] && git tag -am "Version ${tag}${id}" ${tag}${id}
