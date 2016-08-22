@@ -53,7 +53,7 @@ echo $out > $outfile
 [ -z "$tag" ] && version=$(git describe --long --tags --always) || version=$tag
 
 git -C $root add \*
-git -C $root commit -m "Automated Release - $date [$tag]"
+git -C $root commit -m "Automated Release - $date [$version]"
 [ -n "$tag" ] && git tag -am "Version ${tag}${id}" ${tag}${id}
 
 git -C $root push origin $branch
