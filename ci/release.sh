@@ -24,7 +24,7 @@ git config user.email ci@venicegeo.io
 
 # Update the component
 if [[ -n "$component_revision" && -n "$component" ]]; then
-  git="git -C $root/src/$component_revision"
+  git="git -C $root/src/$component"
 
   $git checkout master
   $git pull origin master
