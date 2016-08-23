@@ -56,5 +56,12 @@ git -C $root add \*
 git -C $root commit -m "Automated Release - $date [$version]"
 [ -n "$tag" ] && git tag -am "Version ${tag}${id}" ${tag}${id}
 
-git -C $root push origin $full_branch
+attempts=0
+
+while ! git -C $root push origin $full_branch; do
+  [ $attempts = 10 ] && echo "max attempts reached" && exit 1
+  git -C $root pull origin $full_branch
+  attempts=$((attempts + 1))
+done
+
 git -C $root push origin $full_branch --tags
