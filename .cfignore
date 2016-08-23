@@ -4,4 +4,4 @@ config/
 *.txt
 *.md
 *.properties
-.*
+.cf/*
