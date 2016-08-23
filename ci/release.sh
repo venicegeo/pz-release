@@ -11,8 +11,10 @@ full_branch=$(git symbolic-ref HEAD)
 [ -z $full_branch ] && full_branch=$(git describe --contains --all HEAD)
 branch=${full_branch##refs/heads/}
 echo $branch | grep -q remotes && branch=${full_branch##remotes/origin/}
-echo $branch | grep -q id && id="-rc"
+echo $branch | grep -q rc && id="-rc"
 echo $branch | grep -q ci && id="-ci"
+echo $branch | grep -q test && id="-TEST"
+echo $branch | grep -q master && id=""
 
 git -C $root checkout $branch
 git pull origin $branch
