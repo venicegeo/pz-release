@@ -1,0 +1,44 @@
+{
+  "ConfigVersion": 3,
+  "Target": "https://api.devops.geointservices.io",
+  "ApiVersion": "2.43.0",
+  "AuthorizationEndpoint": "https://login.devops.geointservices.io",
+  "LoggregatorEndPoint": "wss://loggregator.devops.geointservices.io:4443",
+  "DopplerEndPoint": "wss://doppler.devops.geointservices.io:4443",
+  "UaaEndpoint": "https://uaa.devops.geointservices.io",
+  "RoutingApiEndpoint": "https://api.devops.geointservices.io/routing",
+  "AccessToken": "bearer eyJhbGciOiJSUzI1NiJ9.eyJqdGkiOiIwZGJlMTg5Ny1iM2JmLTRlODQtYTY0Mi05N2U5MmU0MjFlZTQiLCJzdWIiOiIwNzU1YWE2NC1hYmJmLTRjMDUtOTc1NC0xZjY4MzI0YzQ5YzciLCJzY29wZSI6WyJvcGVuaWQiLCJ1YWEudXNlciIsImNsb3VkX2NvbnRyb2xsZXIucmVhZCIsInBhc3N3b3JkLndyaXRlIiwiY2xvdWRfY29udHJvbGxlci53cml0ZSJdLCJjbGllbnRfaWQiOiJjZiIsImNpZCI6ImNmIiwiYXpwIjoiY2YiLCJncmFudF90eXBlIjoicGFzc3dvcmQiLCJ1c2VyX2lkIjoiMDc1NWFhNjQtYWJiZi00YzA1LTk3NTQtMWY2ODMyNGM0OWM3Iiwib3JpZ2luIjoibGRhcCIsInVzZXJfbmFtZSI6ImJheHRlcnNoIiwiZW1haWwiOiJzZXRoYmF4dGVyQHByb21pbmVudGVkZ2UuY29tIiwiYXV0aF90aW1lIjoxNDcxOTcwODQwLCJyZXZfc2lnIjoiNjU3MzA4NTEiLCJpYXQiOjE0NzE5NzA4NDAsImV4cCI6MTQ3MTk3ODA0MCwiaXNzIjoiaHR0cHM6Ly91YWEuZGV2b3BzLmdlb2ludHNlcnZpY2VzLmlvL29hdXRoL3Rva2VuIiwiemlkIjoidWFhIiwiYXVkIjpbImNmIiwib3BlbmlkIiwidWFhIiwiY2xvdWRfY29udHJvbGxlciIsInBhc3N3b3JkIl19.TtWuV4UW74kf8X8pCXcvraDQWaVKfhc4jEV7FEYTLdJQqn1CrOye2ja7pu-HpAyCDzNw1nAbbrB5jygVubv8kFD0ueVO48kxngnXPc9VdqNbh-enrPmFiccksOxsN4-UfyAKuRgWF8KsXtLpbe6ruh8W798_E4uqLq5v9g6EoqEaOUZfO7ahcmXV8DTQEPEnoOcu8fq3peYc11UbFPcoWFnzqbPlqZokKMLAAsvu_PsjaEfrlyv0SaS9FD92TRZBsBYXVs1FQ9yafHCKgbQda6dPOMjaRNPkQ10h94hEQwo7lc-heUXJw35VOKIEieIU3PVdMVKkqXIKQm2MZzqs7Q",
+  "SSHOAuthClient": "ssh-proxy",
+  "RefreshToken": "eyJhbGciOiJSUzI1NiJ9.eyJqdGkiOiJlZDRhZDdlZC0yODQxLTQ0NWItYWIwYy01NGYwMDI0YzQ5YzQtciIsInN1YiI6IjA3NTVhYTY0LWFiYmYtNGMwNS05NzU0LTFmNjgzMjRjNDljNyIsInNjb3BlIjpbIm9wZW5pZCIsInVhYS51c2VyIiwiY2xvdWRfY29udHJvbGxlci5yZWFkIiwicGFzc3dvcmQud3JpdGUiLCJjbG91ZF9jb250cm9sbGVyLndyaXRlIl0sImlhdCI6MTQ3MTk3MDg0MCwiZXhwIjoxNDczMTgwNDQwLCJjaWQiOiJjZiIsImNsaWVudF9pZCI6ImNmIiwiaXNzIjoiaHR0cHM6Ly91YWEuZGV2b3BzLmdlb2ludHNlcnZpY2VzLmlvL29hdXRoL3Rva2VuIiwiemlkIjoidWFhIiwiZ3JhbnRfdHlwZSI6InBhc3N3b3JkIiwidXNlcl9uYW1lIjoiYmF4dGVyc2giLCJvcmlnaW4iOiJsZGFwIiwidXNlcl9pZCI6IjA3NTVhYTY0LWFiYmYtNGMwNS05NzU0LTFmNjgzMjRjNDljNyIsInJldl9zaWciOiI2NTczMDg1MSIsImF1ZCI6WyJjZiIsIm9wZW5pZCIsInVhYSIsImNsb3VkX2NvbnRyb2xsZXIiLCJwYXNzd29yZCJdfQ.ekbAMomzex7wD3XFfJBmcuM6HhLQx59Rfe6sG67O0OlOBh7PUzxWjOm9bT3d9A0zaXEFUgJHhc7l83Rucdqflx41SyAASAcF9B461V8cMhvzzcTP2nLsphBkD0jQIEHpqrnpm3oO9FIo0QDl1NEEn9xPv2-GPJj4jZQ93zznlIYp3IdpyeLa6wnKVN3-p6dTMP15b7kZBx5A1OQbu5tfUw45yS103cLyXi2E9RSQ4mZA6Ox1APhYIGE33EX2j61uT9lvrFSsDZ45m5T8UouHG4NHdjbkWz1fuHu2j70q02WHzrFQiFNdFMY-XdrxwmMSjDrY4OpGIM9kIJMRAN1MNg",
+  "OrganizationFields": {
+    "Guid": "d6f6d5eb-d2e5-470e-98cf-372cc3015d44",
+    "Name": "piazza",
+    "QuotaDefinition": {
+      "guid": "59f6e11f-2c32-4f68-a991-95a62a7afbf9",
+      "name": "piazza",
+      "memory_limit": 128000,
+      "instance_memory_limit": -1,
+      "total_routes": 1000,
+      "total_services": 100,
+      "non_basic_services_allowed": true
+    }
+  },
+  "SpaceFields": {
+    "Guid": "3d465928-90e2-45b7-ad55-db5e6addc9f6",
+    "Name": "test",
+    "AllowSSH": true
+  },
+  "SSLDisabled": false,
+  "AsyncTimeout": 0,
+  "Trace": "",
+  "ColorEnabled": "",
+  "Locale": "",
+  "PluginRepos": [
+    {
+      "Name": "CF-Community",
+      "Url": "http://plugins.cloudfoundry.org"
+    }
+  ],
+  "MinCliVersion": "6.7.0",
+  "MinRecommendedCliVersion": "6.11.2"
+}
