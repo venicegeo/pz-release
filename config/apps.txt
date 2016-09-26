@@ -7,7 +7,7 @@ pz-logger
 pz-sak
 pz-search-metadata-ingest
 pz-search-query
-pz-security
+pz-idam
 pz-servicecontroller
 pz-swagger
 pz-uuidgen
