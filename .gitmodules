@@ -23,7 +23,7 @@
 	path = src/pz-search-query
 	url = https://github.com/venicegeo/pz-search-query
 [submodule "src/pz-security"]
-	path = src/pz-security
+	path = src/pz-idam
 	url = https://github.com/venicegeo/pz-security
 [submodule "src/pz-servicecontroller"]
 	path = src/pz-servicecontroller
