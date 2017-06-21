@@ -54,6 +54,14 @@ node {
         sh "cf start ${appName}"
       }
     }
+    withCredentials([[$class: 'StringBinding', credentialsId: "${env.THREADFIX_API_KEY}", variable: 'THREADFIX_KEY']]) {
+      sh """${zapHome}/zap.sh -cmd \
+      -quickout ${root}/zap-out/zap.xml \
+      -quickurl https://${appName}.${env.PHASE_ONE_PCF_DOMAIN} \
+      """
+      sh "cat ${root}/zap-out/zap.xml"
+      sh "/bin/curl -v --insecure -H 'Accept: application/json' -X POST --form file=@${root}/zap-out/zap.xml ${env.THREADFIX_URL}/rest/applications/${THREADFIX_ID}/upload?apiKey=${THREADFIX_KEY}"
+    }
     withEnv(['CF_HOME=.cf']) {
       withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: "${env.PCF_CREDS}", usernameVariable: 'CFUSER', passwordVariable: 'CFPASS']]) {
         sh "cf api ${env.PCF_API_ENDPOINT}"
@@ -104,7 +112,6 @@ node {
         sh "cf target -o ${env.PCF_ORG} -s ${env.PHASE_TWO_PCF_SPACE}"
         def legacyAppNames = sh(script: "cf routes | grep \"pz-release \" | awk '{print \$4}'", returnStdout: true)
         sh "cf map-route ${appName} ${env.PHASE_TWO_PCF_DOMAIN} --hostname pz-release"
-        sh "cf map-route ${appName} ${env.PHASE_TWO_PCF_DOMAIN} --hostname piazza"
           // Remove Legacy applications
           for (Object legacyApp : legacyAppNames.trim().tokenize(',')) {
             def legacyAppName = legacyApp.toString().trim()
