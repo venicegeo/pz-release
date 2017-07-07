@@ -61,7 +61,9 @@ node {
       }
     }
     withCredentials([[$class: 'StringBinding', credentialsId: "${env.THREADFIX_API_KEY}", variable: 'THREADFIX_KEY']]) {
-      sh """${zapHome}/zap.sh -cmd \
+      sh """
+       mkdir -p ${root}/zap-out
+       ${zapHome}/zap.sh -cmd \
       -quickout ${root}/zap-out/zap.xml \
       -quickurl https://${appName}.${env.PHASE_ONE_PCF_DOMAIN} \
       """
