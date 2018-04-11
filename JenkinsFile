@@ -25,7 +25,7 @@ node {
   stage('Setup') {
     deleteDir()
     // github is open gitlab requires credentials to clone
-    if(env.USE_GIT_CREDS) {
+    if(env.USE_GIT_CREDS.toBoolean()) {
       git url: "${env.GIT_URL}", branch: "${env.GIT_BRANCH}", credentialsId: "${env.GITLAB_CREDS}"
     } else {
       git url: "${env.GIT_URL}", branch: "${env.GIT_BRANCH}"
@@ -50,7 +50,7 @@ node {
     }
   } */
 
-  if (env.TAG_AND_RELEASE) {
+  if (env.TAG_AND_RELEASE.toBoolean()) {
     stage("Tag and Release") {
       sh "ci/release.sh"
     }
@@ -106,7 +106,7 @@ node {
     }
   }
 
-  if(env.DEPLOY_PHASE_TWO) {
+  if(env.DEPLOY_PHASE_TWO.toBoolean()) {
     stage('Stage Deploy') {
       if(!fileExists('.cf')) {
         sh "mkdir -p .cf"
