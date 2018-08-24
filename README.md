@@ -1,6 +1,6 @@
 # pz-release
 
-The pz-release project is software that is used to release Piazza. At the time of a release, the configured branches for all Piazza components are imported into a single build.
+The pz-release project is software that is used to aggregate both a consolidated version for Piazza and individual versions for microservice subcomponents. 
 
 ***
 ## Requirements
