@@ -50,7 +50,7 @@ node {
         def depHome = tool 'owasp_dependency_check'
         withEnv(["PATH+=${depHome}/bin"]) {
           sh 'dependency-check.sh --project "pz-release" --scan "." --format "XML" --enableExperimental --disableBundleAudit'
-          sh "/bin/curl -v --insecure -H 'Accept: application/json' -X POST --form file=@dependency-check-report.xml ${env.THREADFIX_URL}/rest/applications/${env.THREADFIX_ID}/upload?apiKey=${THREADFIX_KEY}"
+          sh "/bin/curl -v --insecure -H 'Accept: application/json' -X POST --form file=@dependency-check-report.xml ${env.THREADFIX_URL}/rest/latest/applications/${env.THREADFIX_ID}/upload?apiKey=${THREADFIX_KEY}"
         }
       }
     }
@@ -85,7 +85,7 @@ node {
       -quickurl https://${appName}.${env.PHASE_ONE_PCF_DOMAIN} \
       """
       sh "cat ${root}/zap-out/zap.xml"
-      sh "/bin/curl -v --insecure -H 'Accept: application/json' -X POST --form file=@${root}/zap-out/zap.xml ${env.THREADFIX_URL}/rest/applications/${THREADFIX_ID}/upload?apiKey=${THREADFIX_KEY}"
+      sh "/bin/curl -v --insecure -H 'Accept: application/json' -X POST --form file=@${root}/zap-out/zap.xml ${env.THREADFIX_URL}/rest/latest/applications/${THREADFIX_ID}/upload?apiKey=${THREADFIX_KEY}"
     }
     withEnv(['CF_HOME=.cf']) {
       withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: "${env.PCF_CREDS}", usernameVariable: 'CFUSER', passwordVariable: 'CFPASS']]) {
@@ -134,7 +134,7 @@ node {
         -quickurl https://${appName}.${env.PHASE_TWO_PCF_DOMAIN} \
         """
         sh "cat ${root}/zap-out/zap.xml"
-        sh "/bin/curl -v --insecure -H 'Accept: application/json' -X POST --form file=@${root}/zap-out/zap.xml ${env.THREADFIX_URL}/rest/applications/${THREADFIX_ID}/upload?apiKey=${THREADFIX_KEY}"
+        sh "/bin/curl -v --insecure -H 'Accept: application/json' -X POST --form file=@${root}/zap-out/zap.xml ${env.THREADFIX_URL}/rest/latest/applications/${THREADFIX_ID}/upload?apiKey=${THREADFIX_KEY}"
       }
       withEnv(['CF_HOME=.cf']) {
         withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: "${env.PCF_CREDS}", usernameVariable: 'CFUSER', passwordVariable: 'CFPASS']]) {
